@@ -10,9 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (preloaderVideo) {
-      // O GIF de introdução dura exatamente 2.65 segundos.
-      // Removemos o preloader assim que o GIF terminar.
-      setTimeout(fadeOutPreloader, 2650);
+      preloaderVideo.playbackRate = 1.5;
+      preloaderVideo.muted = true;
+      preloaderVideo.setAttribute('muted', '');
+      preloaderVideo.setAttribute('playsinline', '');
+
+      // Garante a reprodução automática
+      preloaderVideo.play().catch(() => {
+        // Se o navegador bloquear (ex: iOS Power Saver), escondemos pra não ficar travado
+        fadeOutPreloader();
+      });
+
+      // Quando o vídeo acabar, esconde o preloader
+      preloaderVideo.addEventListener('ended', fadeOutPreloader);
+
+      // Tempo limite de segurança
+      setTimeout(fadeOutPreloader, 8500);
     } else {
       setTimeout(fadeOutPreloader, 2500);
     }
