@@ -11,10 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (preloaderVideo) {
       preloaderVideo.playbackRate = 1.5;
+      preloaderVideo.muted = true;
+      preloaderVideo.setAttribute('muted', '');
+      preloaderVideo.setAttribute('playsinline', '');
+      
       // Garante a reprodução automática
       preloaderVideo.play().catch(() => {
-        // Se o navegador bloquear (ex: política de autoplay rígida), avança após 3 segundos
-        setTimeout(fadeOutPreloader, 3000);
+        // Se o celular estiver em modo de economia de energia, ele bloqueia o vídeo.
+        // Nesse caso, removemos o vídeo imediatamente para não travar na tela com um botão de play nativo.
+        fadeOutPreloader();
       });
 
       // Quando o vídeo acabar, esconde o preloader
