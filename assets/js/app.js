@@ -36,31 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ─── CURSOR SEGUIDOR ───
-  const cursor = document.getElementById('cursor');
-  const cursorRing = document.getElementById('cursor-ring');
-
-  if (cursor && cursorRing) {
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-      cursorRing.style.left = `${e.clientX}px`;
-      cursorRing.style.top = `${e.clientY}px`;
-    });
-
-    // Efeitos de Hover para links e botões interativos
-    const hoverElements = document.querySelectorAll('a, button, .hamburger, .contato-item, .servico-card');
-    hoverElements.forEach(elem => {
-      elem.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-        cursorRing.classList.add('hover');
-      });
-      elem.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-        cursorRing.classList.remove('hover');
-      });
-    });
-  }
 
   // ─── SCROLL PROGRESS BAR ───
   const progressBar = document.getElementById('progress-bar');
