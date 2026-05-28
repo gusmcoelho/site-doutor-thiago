@@ -14,12 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
       preloaderVideo.muted = true;
       preloaderVideo.setAttribute('muted', '');
       preloaderVideo.setAttribute('playsinline', '');
-      
+
       // Garante a reprodução automática
       preloaderVideo.play().catch(() => {
-        // Se o celular estiver em modo de economia de energia, ele bloqueia o vídeo.
-        // Nesse caso, removemos o vídeo imediatamente para não travar na tela com um botão de play nativo.
-        fadeOutPreloader();
+        // No mobile, espera o primeiro toque do usuário pra tocar o vídeo
+        const playOnTouch = () => {
+          preloaderVideo.play().then(() => {
+            document.removeEventListener('touchstart', playOnTouch);
+          }).catch(fadeOutPreloader); // Se ainda falhar, pula
+        };
+        document.addEventListener('touchstart', playOnTouch, { once: true });
       });
 
       // Quando o vídeo acabar, esconde o preloader
