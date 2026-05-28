@@ -17,13 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Garante a reprodução automática
       preloaderVideo.play().catch(() => {
-        // No mobile, espera o primeiro toque do usuário pra tocar o vídeo
-        const playOnTouch = () => {
-          preloaderVideo.play().then(() => {
-            document.removeEventListener('touchstart', playOnTouch);
-          }).catch(fadeOutPreloader); // Se ainda falhar, pula
-        };
-        document.addEventListener('touchstart', playOnTouch, { once: true });
+        // Se o navegador/celular bloquear o autoplay (ex: economia de bateria), 
+        // ele vai tentar mostrar um botão de play nativo feio no meio da tela.
+        // Para evitar isso, nós escondemos a introdução e mostramos o site na hora.
+        fadeOutPreloader();
       });
 
       // Quando o vídeo acabar, esconde o preloader
