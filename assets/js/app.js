@@ -1,0 +1,138 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // ─── TELA DE INTRODUÇÃO (PRELOADER COM VÍDEO) ───
+  const preloader = document.getElementById('preloader');
+  const preloaderVideo = document.getElementById('preloader-video');
+  const skipIntro = document.getElementById('skip-intro');
+
+  if (preloader) {
+    const fadeOutPreloader = () => {
+      preloader.classList.add('fade-out');
+    };
+
+    if (preloaderVideo) {
+      preloaderVideo.playbackRate = 1.5;
+      // Garante a reprodução automática
+      preloaderVideo.play().catch(() => {
+        // Se o navegador bloquear (ex: política de autoplay rígida), avança após 3 segundos
+        setTimeout(fadeOutPreloader, 3000);
+      });
+
+      // Quando o vídeo acabar, esconde o preloader
+      preloaderVideo.addEventListener('ended', fadeOutPreloader);
+
+      // Tempo limite de segurança de 8.5 segundos
+      setTimeout(fadeOutPreloader, 8500);
+    } else {
+      setTimeout(fadeOutPreloader, 2500);
+    }
+
+    if (skipIntro) {
+      skipIntro.addEventListener('click', fadeOutPreloader);
+    }
+  }
+
+  // ─── CURSOR SEGUIDOR ───
+  const cursor = document.getElementById('cursor');
+  const cursorRing = document.getElementById('cursor-ring');
+
+  if (cursor && cursorRing) {
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+      cursorRing.style.left = `${e.clientX}px`;
+      cursorRing.style.top = `${e.clientY}px`;
+    });
+
+    // Efeitos de Hover para links e botões interativos
+    const hoverElements = document.querySelectorAll('a, button, .hamburger, .contato-item, .servico-card');
+    hoverElements.forEach(elem => {
+      elem.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+        cursorRing.classList.add('hover');
+      });
+      elem.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+        cursorRing.classList.remove('hover');
+      });
+    });
+  }
+
+  // ─── SCROLL PROGRESS BAR ───
+  const progressBar = document.getElementById('progress-bar');
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = `${scrolled}%`;
+    });
+  }
+
+  // ─── NAVBAR EFEITO SCROLLED ───
+  const mainNav = document.getElementById('main-nav');
+  if (mainNav) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        mainNav.classList.add('scrolled');
+      } else {
+        mainNav.classList.remove('scrolled');
+      }
+    });
+  }
+
+  // ─── MENU MOBILE ───
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileClose = document.getElementById('mobile-close');
+
+  if (hamburger && mobileMenu && mobileClose) {
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+    });
+
+    mobileClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+
+    // Expor função globalmente para clicks inline nos links
+    window.closeMobile = function () {
+      mobileMenu.classList.remove('open');
+    };
+  }
+
+  // ─── SCROLL REVEAL (INTERSECTION OBSERVER) ───
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Para de observar depois que anima
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px' // Ativa um pouco antes do elemento aparecer totalmente
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
+
+  // ─── INSTAGRAM CAROUSEL ───
+  const instaCarousel = document.querySelector('.instagram-carousel');
+  const btnPrev = document.querySelector('.insta-nav.prev');
+  const btnNext = document.querySelector('.insta-nav.next');
+
+  if (instaCarousel && btnPrev && btnNext) {
+    btnNext.addEventListener('click', () => {
+      const scrollAmount = instaCarousel.clientWidth * 0.9;
+      instaCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+    btnPrev.addEventListener('click', () => {
+      const scrollAmount = instaCarousel.clientWidth * 0.9;
+      instaCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+  }
+});

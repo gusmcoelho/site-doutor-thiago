@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Dr. Thiago Rodrigues de Oliveira - Médico Psiquiatra. Consultas e tratamentos especializados em saúde mental. Agende sua consulta pelo WhatsApp.">
+    <meta name="keywords" content="psiquiatra, Dr. Thiago Rodrigues, psiquiatria, consulta psiquiatria, saúde mental">
+    <meta property="og:title" content="Dr. Thiago Rodrigues de Oliveira – Psiquiatra">
+    <meta property="og:description"
+        content="Médico Psiquiatra. Consultas e tratamentos especializados em saúde mental. Agende sua consulta.">
+    <title>Dr. Thiago Rodrigues de Oliveira | Médico Psiquiatra</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon_brain.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Alex+Brush&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Preloader / Tela de Introdução -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <video id="preloader-video" src="assets/videos/intro.mp4" autoplay muted playsinline></video>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <!-- Nav -->
+    <nav id="main-nav">
+        <a href="#hero" class="nav-logo">
+            <img src="assets/images/logo_brain.png" alt="Logo Dr. Thiago" style="height: 36px; width: auto; object-fit: contain;">
+            Dr. Thiago Rodrigues
+        </a>
+        <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+
+            <a href="#contato">Contato</a>
+            <a href="https://wa.me/5514998675294?text=Olá%20Dr.%20Thiago!%20Gostaria%20de%20agendar%20uma%20consulta."
+                class="nav-cta" target="_blank">Agendar Consulta</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-close" id="mobile-close">✕</button>
+        <a href="#sobre" onclick="closeMobile()">Sobre</a>
+        <a href="#servicos" onclick="closeMobile()">Serviços</a>
+
+        <a href="#contato" onclick="closeMobile()">Contato</a>
+        <a href="https://wa.me/5514998675294?text=Olá%20Dr.%20Thiago!%20Gostaria%20de%20agendar%20uma%20consulta."
+            target="_blank" style="color: #7A9E8A; font-size: 1.4rem; margin-top: 1rem;">Agendar pelo WhatsApp</a>
+    </div>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="hero-bg">
+            <div class="hero-bg-circle c1"></div>
+            <div class="hero-bg-circle c2"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">Psiquiatra • CRM-SP</div>
+            <h1 class="hero-title">
+                <span>Cuidado com<br>sua</span> <em>saúde mental</em>
+            </h1>
+            <p class="hero-subtitle">
+                Atendimento psiquiátrico especializado com abordagem acolhedora e tratamentos baseados em evidências.
+            </p>
+            <div class="hero-actions">
+                <a href="https://wa.me/5514998675294?text=Olá%20Dr.%20Thiago!%20Gostaria%20de%20agendar%20uma%20consulta."
+                    class="btn-primary" target="_blank">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                    Agendar pelo WhatsApp
+                </a>
+                <a href="#sobre" class="btn-secondary">
+                    Conheça o Dr. Thiago
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-photo-frame">
+                <div class="hero-photo-bg"></div>
+                <div class="hero-photo-placeholder">
+                    <img src="assets/images/portrait_doctor.png" alt="Dr. Thiago Rodrigues de Oliveira - Médico Psiquiatra">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </div>
+
+    <!-- Sobre -->
+    <section id="sobre" class="dark-section">
+        <div class="sobre-visual reveal-left">
+            <div class="sobre-img-placeholder">
+                <img src="assets/images/doctor_office.png" alt="Consultório Dr. Thiago Rodrigues">
+                <div class="sobre-accent">
+                    <div class="sobre-accent-num">+10</div>
+                    <div class="sobre-accent-txt">Anos de<br>Experiência</div>
+                </div>
+            </div>
+        </div>
+        <div class="reveal-right">
+            <div class="section-label">Sobre o médico</div>
+            <h2 class="section-title">Dr. Thiago<br>Rodrigues de <em>Oliveira</em></h2>
+            <p class="section-desc">
+                Psiquiatra comprometido com o cuidado integral da saúde mental. Com formação de excelência e
+                especialização contínua, oferece um atendimento humanizado e baseado nas melhores evidências
+                científicas.
+            </p>
+            <div style="margin-top: 2rem;">
+                <a href="https://www.instagram.com/drthiagoavare" class="btn-primary" target="_blank">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="white"
+                        style="vertical-align: middle; margin-right: 8px;">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    Siga no Instagram @drthiagoavare
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="light-section">
+        <div class="servicos-header reveal">
+            <div class="section-label">Como posso ajudar</div>
+            <h2 class="section-title">Áreas de<br><em>Atendimento</em></h2>
+            <p class="section-desc">Tratamento especializado e humanizado voltado para a saúde da mente.</p>
+        </div>
+        <div class="servicos-grid">
+            <div class="servico-card reveal" style="transition-delay:0.1s">
+                <div class="servico-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+                    </svg>
+                </div>
+                <div class="servico-title">Ansiedade & Estresse</div>
+                <p class="servico-desc">Tratamento individualizado para crises de pânico, ansiedade generalizada e
+                    esgotamento profissional (Síndrome de Burnout).</p>
+                <span class="servico-tag">Ansiedade e Esgotamento</span>
+            </div>
+            <div class="servico-card featured reveal" style="transition-delay:0.2s">
+                <div class="servico-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                    </svg>
+                </div>
+                <div class="servico-title">Consulta Psiquiátrica</div>
+                <p class="servico-desc">Atendimento presencial humanizado focado no diagnóstico preciso, escuta atenta e
+                    tratamento personalizado na Clínica GM.</p>
+                <span class="servico-tag">Presencial – Clínica GM</span>
+            </div>
+            <div class="servico-card reveal" style="transition-delay:0.3s">
+                <div class="servico-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" />
+                    </svg>
+                </div>
+                <div class="servico-title">Humor & Neurodesenvolvimento</div>
+                <p class="servico-desc">Suporte especializado para depressão, oscilações severas de humor, TDAH e
+                    autismo em adultos.</p>
+                <span class="servico-tag">Humor, TDAH e Autismo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="dark-section">
+        <div class="depoimentos-header reveal">
+            <div class="section-label">Depoimentos</div>
+            <h2 class="section-title">O que dizem os <em>Pacientes</em></h2>
+            <p class="section-desc">Relatos de pessoas que passaram por acompanhamento médico com o Dr. Thiago
+                (identidades preservadas por ética médica CFM).</p>
+        </div>
+        <div class="depoimentos-carousel-container reveal">
+            <div class="depoimentos-track">
+                <!-- Card 1 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"Excelente profissional. Fui diagnosticada com TDAH na fase adulta pelo
+                        Dr. Thiago e o tratamento mudou completamente minha qualidade de vida e foco. Muito atencioso."
+                    </p>
+                    <div class="depoimento-author">Mariana R.</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"O Dr. Thiago é extremamente empático e humanizado. Tratei meu quadro de
+                        burnout e ansiedade severa com ele. Ele realmente ouve com calma e sem pressa."</p>
+                    <div class="depoimento-author">Carlos H.</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"Consultório extremamente acolhedor e atendimento pontual. Ele explica
+                        detalhadamente o papel de cada medicação, transmitindo muita segurança."</p>
+                    <div class="depoimento-author">Sofia M.</div>
+                </div>
+                <!-- Card 4 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"Depois de passar por outros médicos sem melhora, finalmente encontrei um
+                        psiquiatra que investigou a fundo minhas oscilações de humor."</p>
+                    <div class="depoimento-author">Ricardo G.</div>
+                </div>
+                <!-- Card 5 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"Acolhimento impecável e muito profissionalismo. A escuta atenta e
+                        humanizada do Dr. Thiago faz toda a diferença no andamento do tratamento."</p>
+                    <div class="depoimento-author">Thiago F.</div>
+                </div>
+
+                <!-- Duplicated Cards for Infinite Loop -->
+                <!-- Card 1 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"Excelente profissional. Fui diagnosticada com TDAH na fase adulta pelo
+                        Dr. Thiago e o tratamento mudou completamente minha qualidade de vida e foco. Muito atencioso."
+                    </p>
+                    <div class="depoimento-author">Mariana R.</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"O Dr. Thiago é extremamente empático e humanizado. Tratei meu quadro de
+                        burnout e ansiedade severa com ele. Ele realmente ouve com calma e sem pressa."</p>
+                    <div class="depoimento-author">Carlos H.</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"Consultório extremamente acolhedor e atendimento pontual. Ele explica
+                        detalhadamente o papel de cada medicação, transmitindo muita segurança."</p>
+                    <div class="depoimento-author">Sofia M.</div>
+                </div>
+                <!-- Card 4 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"Depois de passar por outros médicos sem melhora, finalmente encontrei um
+                        psiquiatra que investigou a fundo minhas oscilações de humor."</p>
+                    <div class="depoimento-author">Ricardo G.</div>
+                </div>
+                <!-- Card 5 -->
+                <div class="depoimento-card">
+                    <div class="depoimento-rating">★★★★★</div>
+                    <p class="depoimento-text">"Acolhimento impecável e muito profissionalismo. A escuta atenta e
+                        humanizada do Dr. Thiago faz toda a diferença no andamento do tratamento."</p>
+                    <div class="depoimento-author">Thiago F.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Convênios -->
+    <section id="convenios" class="light-section">
+        <div class="convenios-inner reveal">
+            <div class="section-label">Formas de Pagamento</div>
+            <h2 class="section-title">Atendimento<br><em>Particular</em></h2>
+            <div class="particular-box">
+                <h3>Consultas Particulares</h3>
+                <p>Atendimento particular com foco total em você. Sem filas, sem burocracia. Agende sua consulta
+                    diretamente pelo WhatsApp e receba atendimento personalizado e de qualidade.</p>
+                <p style="font-size: 0.85rem; color: #8A9E95;">Informações sobre valores e condições de pagamento
+                    diretamente pelo WhatsApp.</p>
+                <a href="https://wa.me/5514998675294?text=Olá%20Dr.%20Thiago!%20Gostaria%20de%20saber%20sobre%20valores%20e%20formas%20de%20pagamento."
+                    class="btn-primary" target="_blank" style="margin-top: 0.5rem;">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                    Consultar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="dark-section">
+        <div class="contato-info reveal-left">
+            <div class="section-label">Localização</div>
+            <h2 class="section-title">Como nos<br><em>Encontrar</em></h2>
+            <p class="section-desc">Entre em contato ou venha nos visitar na Clínica GM.</p>
+            <div class="contato-items">
+                <a href="https://wa.me/5514998675294?text=Olá%20Dr.%20Thiago!%20Gostaria%20de%20agendar%20uma%20consulta."
+                    class="contato-item" target="_blank">
+                    <div class="contato-item-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="contato-item-label">WhatsApp</div>
+                        <div class="contato-item-value">(14) 99867-5294</div>
+                    </div>
+                </a>
+                <a href="https://www.google.com/maps/search/Rua+São+Paulo+485+Avaré+SP" class="contato-item"
+                    target="_blank">
+                    <div class="contato-item-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="contato-item-label">Endereço</div>
+                        <div class="contato-item-value">Rua São Paulo, 485 – Clínica GM</div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/drthiagoavare" class="contato-item" target="_blank">
+                    <div class="contato-item-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="contato-item-label">Instagram</div>
+                        <div class="contato-item-value">@drthiagoavare</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="reveal-right">
+            <div class="contato-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.3!2d-48.9256!3d-23.0983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+S%C3%A3o+Paulo%2C+485%2C+Avar%C3%A9+-+SP!5e0!3m2!1spt-BR!2sbr!4v1"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <a href="https://www.google.com/maps/search/Rua+São+Paulo+485+Avaré+SP" class="map-link"
+                    target="_blank">
+                    <div class="map-link-left">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                        </svg>
+                        <div class="map-link-txt">
+                            <p>Ver no Google Maps</p>
+                            <p>Rua São Paulo, 485</p>
+                        </div>
+                    </div>
+                    <div class="map-link-arrow">↗</div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section style="background: var(--night); padding: 80px 4%; text-align: center;">
+        <div class="reveal" style="max-width:600px; margin:0 auto;">
+            <div class="section-label" style="justify-content:center; color:var(--sage-light);">
+                <span
+                    style="width:28px;height:1px;background:var(--sage);display:inline-block;margin-right:8px;"></span>
+                Próximo passo
+            </div>
+            <h2
+                style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,3.5rem); color:white; font-weight:400; margin:1rem 0 1.5rem; line-height:1.2;">
+                Dê o primeiro passo<br>rumo ao <em style="font-style:italic;color:var(--sage-light);">bem-estar</em>
+            </h2>
+            <p style="color:rgba(255,255,255,0.6); font-size:1rem; line-height:1.8; margin-bottom:2.5rem;">
+                Agende sua consulta agora pelo WhatsApp. Atendimento ágil, humanizado e sigiloso.
+            </p>
+            <a href="https://wa.me/5514998675294?text=Olá%20Dr.%20Thiago!%20Gostaria%20de%20agendar%20uma%20consulta."
+                class="btn-primary" target="_blank" style="font-size:1.05rem; padding:1.1rem 2.5rem;">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="white">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+                Agendar Consulta
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">
+            Dr. Thiago Rodrigues de Oliveira
+            <span>Psiquiatria & Saúde Mental</span>
+        </div>
+        <div class="footer-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+
+            <a href="#contato">Contato</a>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 Dr. Thiago Rodrigues de Oliveira. Todos os direitos reservados. CRM-SP 210874. | Desenvolvido
+            por <a href="https://wa.me/5514998675294" target="_blank">Dr. Thiago</a>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="wa-float">
+        <div class="wa-tooltip">Fale Conosco no WhatsApp</div>
+        <a href="https://wa.me/5514998675294?text=Olá%20Dr.%20Thiago!%20Gostaria%20de%20agendar%20uma%20consulta."
+            class="wa-btn" target="_blank">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            </svg>
+        </a>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
