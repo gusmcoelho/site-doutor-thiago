@@ -1455,6 +1455,11 @@ footer {
     visibility: hidden;
 }
 
+#preloader.fade-out #preloader-video {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
 .preloader-content {
     position: relative;
     width: 100%;
